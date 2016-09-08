@@ -1,6 +1,5 @@
-package com.github.BeGoodYourself.core;
+package com.github.BeYourself.broker;
 
-import com.github.BeGoodYourself.bo.Message;
 import com.github.BeGoodYourself.bo.header.TopicMessage;
 import io.netty.channel.Channel;
 

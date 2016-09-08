@@ -1,4 +1,4 @@
-package com.github.BeGoodYourself.core;
+package com.github.BeYourself.broker;
 
 import com.github.BeGoodYourself.bo.RemoteChannelData;
 import com.github.BeGoodYourself.bo.header.SubscribeMessage;

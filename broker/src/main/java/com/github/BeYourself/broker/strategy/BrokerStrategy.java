@@ -2,8 +2,8 @@ package com.github.BeYourself.broker.strategy;
 
 import com.github.BeGoodYourself.bo.RequestMessage;
 import com.github.BeGoodYourself.bo.ResponseMessage;
-import com.github.BeGoodYourself.core.ConsumerMessageListener;
-import com.github.BeGoodYourself.core.ProducerMessageListener;
+import com.github.BeYourself.broker.ConsumerMessageListener;
+import com.github.BeYourself.broker.ProducerMessageListener;
 import io.netty.channel.ChannelHandlerContext;
 
 /**

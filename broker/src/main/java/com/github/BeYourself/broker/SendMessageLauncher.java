@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class SendMessageLauncher {
     private long timeout = MessageSystemConfig.MessageTimeOutValue;
 
-    public Map<String, CallBackInvoker<Object>> invokeMap = new ConcurrentSkipListMap<String, CallBackInvoker<Object>>();
+    public Map<String, CallBackInvoker<Object>> invokeMap = new ConcurrentSkipListMap<>();
 
     private SendMessageLauncher() {
 
@@ -37,7 +37,7 @@ public class SendMessageLauncher {
 
     public Object launcher(Channel channel, ResponseMessage response) {
         if (channel != null) {
-            CallBackInvoker<Object> invoke = new CallBackInvoker<Object>();
+            CallBackInvoker<Object> invoke = new CallBackInvoker<>();
             invokeMap.put(response.getMsgId(), invoke);
             invoke.setRequestId(response.getMsgId());
             ChannelFuture channelFuture = channel.writeAndFlush(response);

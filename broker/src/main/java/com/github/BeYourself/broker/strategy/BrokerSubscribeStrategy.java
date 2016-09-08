@@ -5,8 +5,6 @@ import com.github.BeGoodYourself.bo.RemoteChannelData;
 import com.github.BeGoodYourself.bo.RequestMessage;
 import com.github.BeGoodYourself.bo.ResponseMessage;
 import com.github.BeGoodYourself.bo.header.SubscribeMessage;
-import com.github.BeGoodYourself.core.ConsumerMessageListener;
-import com.github.BeGoodYourself.core.ProducerMessageListener;
 import io.netty.channel.ChannelHandlerContext;
 
 /**

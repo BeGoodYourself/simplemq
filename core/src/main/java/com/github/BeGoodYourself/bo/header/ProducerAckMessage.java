@@ -1,13 +1,14 @@
 package com.github.BeGoodYourself.bo.header;
 
 import com.github.BeGoodYourself.bo.HeaderMessage;
+import com.github.BeGoodYourself.bo.MessageStatus;
 
 /**
  * Created by Administrator on 2016/9/7.
  */
 public class ProducerAckMessage extends HeaderMessage{
     private String ack;
-    private int status;
+    private MessageStatus status;
 
     public String getAck() {
         return ack;
@@ -17,11 +18,11 @@ public class ProducerAckMessage extends HeaderMessage{
         this.ack = ack;
     }
 
-    public int getStatus() {
+    public MessageStatus getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(MessageStatus status) {
         this.status = status;
     }
 }
