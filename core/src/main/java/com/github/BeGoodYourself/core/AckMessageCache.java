@@ -33,9 +33,9 @@ public class AckMessageCache extends MessageCache<String>{
     public static AckMessageCache getAckMessageCache() {
         return AckMessageCacheHolder.cache;
     }
-
+    @SuppressWarnings("parallelDispatch")
     public void parallelDispatch(LinkedList<String> list) {
-        List<AckMessageTask> tasks = new ArrayList<;
+        List<Callable<Long>> tasks = new ArrayList<>();
         List<Future<Long>> futureList = new ArrayList<>();
         int startPosition = 0;
         Pair<Integer, Integer> pair = calculateBlocks(list.size(), list.size());
@@ -52,11 +52,12 @@ public class AckMessageCache extends MessageCache<String>{
         }
 
         ExecutorService executor = Executors.newFixedThreadPool(numberOfThreads);
-        try {
-            futureList = executor.invokeAll(tasks);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(AckMessageCache.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//
+//            futureList = executor.invokeAll(tasks);
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(AckMessageCache.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
         for (Future<Long> longFuture : futureList) {
             try {
